@@ -1,0 +1,69 @@
+dependencies:
+  espressif/eppp_link:
+    component_hash: 41f6519edda527ec6a0553c872ebaf8fc6d3812523c9d4c8d1660ad21c720abe
+    dependencies:
+    - name: espressif/esp_serial_slave_link
+      registry_url: https://components.espressif.com
+      require: private
+      version: ^1.1.0
+    - name: idf
+      require: private
+      version: '>=5.2'
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    version: 1.1.3
+  espressif/esp_serial_slave_link:
+    component_hash: 7cd3bae703cc6136b578ef521b2f9df3171d029775a3558f0efdb200a3b04f57
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.0'
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    version: 1.1.1~1
+  espressif/esp_wifi_remote:
+    component_hash: b47955c63b9472f7a2e97484d0e78782d31800a03d882654954ae59d2a6ced53
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.3'
+    - name: espressif/esp_hosted
+      registry_url: https://components.espressif.com
+      require: private
+      rules:
+      - if: target in [esp32h2, esp32p4]
+      version: '>=0.0.6'
+    - name: espressif/wifi_remote_over_eppp
+      registry_url: https://components.espressif.com
+      require: private
+      version: '>=0.1'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.1.5
+  espressif/wifi_remote_over_eppp:
+    component_hash: 7afc4161e7746618c52285e8103393c7fab7b3d88e18653e5ccf723f2012f9c2
+    dependencies:
+    - name: espressif/eppp_link
+      registry_url: https://components.espressif.com
+      require: private
+      version: '>=0.1'
+    - name: idf
+      require: private
+      version: '>=5.3'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 0.2.0
+  idf:
+    source:
+      type: idf
+    version: 5.5.1
+direct_dependencies:
+- espressif/esp_wifi_remote
+- espressif/wifi_remote_over_eppp
+manifest_hash: 92f1d6e7c62be53111d4e8d9e8c67caa45a50378437bfd7e28c2daf3c7046f0a
+target: esp32s3
+version: 2.0.0
